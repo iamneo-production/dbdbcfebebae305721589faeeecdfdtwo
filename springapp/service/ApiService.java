@@ -1,7 +1,7 @@
 
 package home.coder.project.workspace.springapp.service;
 
-import com.example.demo.model.Laptop;
+import home.coder.project.workspace.springapp.model.Laptop;
 import java.util.List;
 
 public interface ApiService {

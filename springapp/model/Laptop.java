@@ -1,8 +1,16 @@
 
+package home.coder.project.workspace.springapp.model;
 public class Laptop{
     private int laptopId,laptopPrice;
     private String laptopBrand;
-
+    Laptop(){
+        
+    }
+    Laptop(int laptopId,int laptopPrice,String laptopBrand){
+        this.laptopId=laptopId;
+        this.laptopPrice=laptopPrice;
+        this.laptopBrand=laptopBrand;
+    }
     int getLaptopId(){
         return laptopId;
     }
