@@ -1,18 +1,28 @@
+package 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 @RestController
-public class LaptopController{
-    Laptop laptop;
+@RequestMapping("/laptops")
+public class LaptopController {
+    @Autowired
+    private ApiService apiService;
 
-    @RequestMapping("{laptopId}")
-    public Laptop getLaptopDetails(int laptopId){
-        return laptop;
+    @GetMapping("/{laptopId}")
+    public Laptop getLaptop(@PathVariable int laptopId) {
+        return apiService.getLaptopById(laptopId);
     }
 
-    @GetMapping()
-    public List<Laptop> getLaptopListDetails(){
-
+    @GetMapping("/")
+    public List<Laptop> getAllLaptops() {
+        return apiService.getAllLaptops();
     }
 
-    @PostMapping
+    @PostMapping("/")
+    public boolean createLaptop(@RequestBody Laptop laptop) {
+        return apiService.createLaptop(laptop);
+    }
 }
